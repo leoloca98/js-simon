@@ -15,16 +15,26 @@ var randomContainer = [];
 var randomNum;
 var randomNumMax = 100;
 var contTimer = 0;
+var i = 0;
+var userNum;
+var flag = false;
 
 while (randomContainer.length < 5) {
-    randomNum = parseInt(Math.floor(Math.random() * (randomNumMax) + 1));
+    randomNum = Math.floor(Math.random() * (randomNumMax) + 1);
     if (!randomContainer.includes(randomNum)) {
         randomContainer.push(randomNum + " ");
     }
 }
 
 alert("Ricordati questi numeri: " + randomContainer);
-intervalId = setInterval(thirtySecTimer, 100);
+var intervalId = setInterval(thirtySecTimer, 1000);
+
+for (i = 0; i < 5; i++) {
+    userNum = prompt("inserire numero:", 1);
+    console.log(userNum);
+}
+
+
 
 //Creo una funzione che conta fino a 30 secondi
 function thirtySecTimer() {
