@@ -32,7 +32,7 @@ while (randomContainer.length < 5) {
 
 alert("Ricordati questi numeri: " + randomContainer);
 console.table(randomContainer);
-var intervalId = setInterval(thirtySecTimer, 100);
+var intervalId = setInterval(thirtySecTimer, 1000);
 
 
 
@@ -51,7 +51,7 @@ function insertNumber() {
     while (userNumContainer.length < 5) {
         do {
             userNum = parseInt(prompt("inserire numero:"));
-        } while (!userNum || isNaN(userNum));
+        } while (!userNum || isNaN(userNum) || userNum.trim() === "");
         userNumContainer.push(userNum);
         if (randomContainer.includes(userNum)) {
             score++;
